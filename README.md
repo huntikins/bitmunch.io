@@ -1,1 +1,1 @@
-# bitmunch.io
+# BitMunch.io
