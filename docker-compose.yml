@@ -15,7 +15,7 @@ services:
     image: ghost:5-alpine
     container_name: ghost
     volumes:
-      - ./ghost/theme:/var/lib/ghost/content/themes/bitmunch:z
+      - ./ghost/theme/dist:/var/lib/ghost/content/themes/bitmunch:z
       # - ./ghost/config.production.json:/var/lib/ghost/config.production.json:z
       # - ./ghost/config.development.json:/var/lib/ghost/config.development.json:z #overwrite default settings 
     ports:
