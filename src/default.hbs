@@ -1,0 +1,46 @@
+<html lang="{{@site.locale}}">
+
+  <head>
+    <title>{{meta_title}}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{! Preload scripts }}
+    <link rel="preload" as="style" href="{{asset 'assets/css/style.css'}}" />
+    <link rel="preload" as="script" href="{{asset 'assets/js/core.js'}}" />
+    <link rel="preload" as="script" href="{{asset 'assets/js/main.js'}}" />
+
+    {{! Theme assets - use the {asset} helper to reference styles & scripts,
+    this will take care of caching and cache-busting automatically }}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{asset 'assets/css/style.css'}}"
+    />
+    <script src="{{asset 'assets/js/core.js'}}" defer type="module"></script>
+    {{ghost_head}}
+  </head>
+
+  <body class="{{body_class}}">
+
+    <header>
+
+    </header>
+
+    <main class="pt-12">
+      {{{body}}}
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="{{asset 'assets/js/main.js'}}" defer type="module"></script>
+    {{{block "scripts"}}}
+
+    {{ghost_foot}}
+
+  </body>
+
+</html>

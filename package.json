@@ -1,0 +1,35 @@
+{
+  "name": "bitmunch",
+  "description": "Default theme for bitmunch.io blog website",
+  "version": "0.0.1",
+  "type": "module",
+  "author": {
+    "name": "Hunter Trammell",
+    "email": "hello@huntertrammell.dev",
+    "url": "https://huntertrammell.dev"
+  },
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "scripts": {
+    "dev": "tsc && vite build --watch",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "gscan dist"
+  },
+  "devDependencies": {
+    "@types/alpinejs": "^3.13.10",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "postcss-replace": "^2.0.1",
+    "rollup-plugin-copy-watch": "^0.0.1",
+    "sass": "^1.77.6",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1",
+    "vite-plugin-full-reload": "^1.1.0"
+  },
+  "dependencies": {
+    "alpinejs": "^3.14.1"
+  }
+}

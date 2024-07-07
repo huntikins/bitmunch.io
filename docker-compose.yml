@@ -1,9 +1,10 @@
+name: bitmunch
 services:
-  mysql:
+  db:
     image: mysql:8.0
     container_name: mysql
     volumes:
-      - mysql:/var/lib/mysql:z
+      - db:/var/lib/mysql:z
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
@@ -11,26 +12,26 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     restart: always
 
-  ghost:
+  web:
     image: ghost:5-alpine
     container_name: ghost
     volumes:
-      - ./ghost/theme/dist:/var/lib/ghost/content/themes/bitmunch:z
-      # - ./ghost/config.production.json:/var/lib/ghost/config.production.json:z
-      # - ./ghost/config.development.json:/var/lib/ghost/config.development.json:z #overwrite default settings 
+      - ./dist:/var/lib/ghost/content/themes/bitmunch:z
+      # - ./config.production.json:/var/lib/ghost/config.production.json:z
+      # - ./config.development.json:/var/lib/ghost/config.development.json:z #overwrite default settings 
     ports:
       - 8080:2368
     environment:
       # - NODE_ENV=production
       url: http://localhost:8080
       database__client: mysql
-      database__connection__host: mysql
+      database__connection__host: db
       database__connection__user: ${MYSQL_USER}
       database__connection__password: ${MYSQL_PASSWORD}
       database__connection__database: ${MYSQL_DATABASE}
     restart: always
     depends_on:
-      - mysql
+      - db
 
 volumes:
-  mysql:
+  db:

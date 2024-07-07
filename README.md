@@ -1,3 +1,11 @@
 # BitMunch.io
+Technology blog powered by Ghost CMS
 
-`cd bitmunch.io && docker compose up`
+## Custom Theme
+Cus
+
+
+
+## Usage
+
+`docker compose up`
