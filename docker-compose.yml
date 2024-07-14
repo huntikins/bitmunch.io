@@ -18,11 +18,10 @@ services:
     volumes:
       - ./dist:/var/lib/ghost/content/themes/bitmunch:z
       # - ./config.production.json:/var/lib/ghost/config.production.json:z
-      # - ./config.development.json:/var/lib/ghost/config.development.json:z #overwrite default settings 
+      # - ./config.development.json:/var/lib/ghost/config.development.json:z
     ports:
       - 8080:2368
     environment:
-      # - NODE_ENV=production
       url: http://localhost:8080
       database__client: mysql
       database__connection__host: db

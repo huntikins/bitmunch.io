@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
-import copy from "rollup-plugin-copy-watch";
-import FullReload from "vite-plugin-full-reload";
+import { viteStaticCopy as copy } from "vite-plugin-static-copy";
 
 export default defineConfig(({ command, mode }) => {
   return {
@@ -8,27 +7,28 @@ export default defineConfig(({ command, mode }) => {
       minify: true,
       rollupOptions: {
         input: {
-          core: 'src/lib/index.ts',
-          main: 'src/index.ts'
+          core: "src/lib/index.ts",
+          main: "src/index.ts",
         },
         output: {
-          format: 'es',
-          entryFileNames: 'assets/js/[name].js',
-          assetFileNames: 'assets/css/[name].[ext]'
-        }
+          format: "es",
+          entryFileNames: "assets/js/[name].js",
+          assetFileNames: "assets/css/[name].[ext]",
+        },
       },
     },
     plugins: [
       copy({
         targets: [
           {
-            src: ["package.json", "src/partials", "src/index.hbs", "src/post.hbs", "src/default.hbs"],
-            dest: "dist",
+            src: ["package.json", "src/*.hbs", "src/partials/"],
+            dest: "./"
           },
           {
-            src: ["src/public"],
-            dest: 'dist'
-          }
+            src: ["src/components/**/*.hbs"],
+            dest: "./partials",
+            rename: (name, extension) => `component-${name}.${extension}`,
+          },
         ],
       }),
     ],

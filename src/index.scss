@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "DM_Sans";
-  src: url("./assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf");
+@import './styles/fonts.scss';
+
+@layer base {
+  html {
+    @apply font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Iosevka", monospace;
+  }
 }
