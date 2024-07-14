@@ -4,33 +4,30 @@ services:
     image: mysql:8.0
     container_name: mysql
     volumes:
-      - db:/var/lib/mysql:z
+      - db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     restart: always
 
   web:
-    image: ghost:5-alpine
-    container_name: ghost
-    volumes:
-      - ./dist:/var/lib/ghost/content/themes/bitmunch:z
-      # - ./config.production.json:/var/lib/ghost/config.production.json:z
-      # - ./config.development.json:/var/lib/ghost/config.development.json:z
-    ports:
-      - 8080:2368
-    environment:
-      url: http://localhost:8080
-      database__client: mysql
-      database__connection__host: db
-      database__connection__user: ${MYSQL_USER}
-      database__connection__password: ${MYSQL_PASSWORD}
-      database__connection__database: ${MYSQL_DATABASE}
+    image: wordpress
     restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
+    volumes:
+      - wordpress:/var/www/html
+      - ./dist:/var/www/html/wp-content/themes/bitmunch_io
     depends_on:
       - db
 
 volumes:
   db:
+  wordpress:

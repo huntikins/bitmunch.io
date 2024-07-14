@@ -1,5 +1,5 @@
 # BitMunch.io
-Technology blog powered by Ghost CMS
+Technology blog powered by ~~Ghost~~ CMS WordPress
 
 ## Custom Theme
 

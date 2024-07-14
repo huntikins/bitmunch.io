@@ -1,9 +1,12 @@
+/** @type {import('vite').UserConfig} */
+
 import { defineConfig } from "vite";
 import { viteStaticCopy as copy } from "vite-plugin-static-copy";
 
 export default defineConfig(({ command, mode }) => {
   return {
     build: {
+      outDir: 'dist',
       minify: true,
       rollupOptions: {
         input: {
@@ -21,14 +24,14 @@ export default defineConfig(({ command, mode }) => {
       copy({
         targets: [
           {
-            src: ["package.json", "src/*.hbs", "src/partials/"],
-            dest: "./"
+            src: ["src/theme/*"],
+            dest: "./",
           },
           {
-            src: ["src/components/**/*.hbs"],
-            dest: "./partials",
+            src: ["src/components/**/*.php"],
+            dest: "./components",
             rename: (name, extension) => `component-${name}.${extension}`,
-          },
+          }
         ],
       }),
     ],
