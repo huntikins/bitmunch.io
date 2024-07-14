@@ -8,5 +8,5 @@ Technology blog powered by ~~Ghost~~ CMS WordPress
 1. install packages
 2. run build script
 3. `docker compose up`
-4. Create ghost account
-5. Change theme to bitmunch.io
+4. localhost:8080
+5. Finish installation process and change theme to bitmunch.io
