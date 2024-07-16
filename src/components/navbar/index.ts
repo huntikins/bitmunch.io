@@ -1,4 +1,4 @@
-window.Alpine?.data('navbar', () => ({
-    isOpen: true,
-    test: true
-}))
+window.bitmunch.Alpine.data("navbar", () => ({
+  isOpen: false,
+  test: true,
+}));

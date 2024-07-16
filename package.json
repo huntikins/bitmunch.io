@@ -10,10 +10,11 @@
   },
   "scripts": {
     "dev": "tsc && vite build --watch",
-    "build": "tsc && vite optimize -m production && vite build -m production"
+    "build": "tsc && vite build -m production"
   },
   "devDependencies": {
     "@types/alpinejs": "^3.13.10",
+    "@types/alpinejs__focus": "^3.13.4",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
     "postcss-replace": "^2.0.1",
@@ -24,6 +25,7 @@
     "vite-plugin-static-copy": "^1.0.6"
   },
   "dependencies": {
+    "@alpinejs/focus": "^3.14.1",
     "@fontsource/iosevka": "^5.0.11",
     "@fontsource/lato": "^5.0.21",
     "alpinejs": "^3.14.1"

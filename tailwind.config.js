@@ -2,7 +2,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
-  content: ["./src/**/*.{php,js,ts,html}"],
+  content: ["./src/**/*.{php,ts}"],
   theme: {
     extend: {
       fontFamily: {
@@ -12,9 +12,6 @@ export default {
       colors: {
         dark: "#191A19",
         brand: "#19C384",
-        green: {
-          dark: "#56682c",
-        }
       },
     },
   }

@@ -1,9 +1,15 @@
 import Alpine from "alpinejs";
+import focus from "@alpinejs/focus";
+import { TAlpine } from "./alpine.interface";
 
-window.Alpine = window.Alpine || {};
+/**
+ * Initializes Alpine
+ *
+ * @returns {TAlpine}
+ */
+export const alpineInit = (): TAlpine => {
+  // Alpine specific features
+  Alpine.plugin(focus);
 
-document.addEventListener("alpine:init", () => {
-  window.Alpine = Alpine;
-
-  Alpine.start();
-});
+  return Alpine;
+};

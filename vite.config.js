@@ -5,16 +5,16 @@ import { viteStaticCopy as copy } from "vite-plugin-static-copy";
 
 export default defineConfig(({ command, mode }) => {
   return {
+    mode: "production",
+    appType: "custom",
     build: {
-      outDir: 'dist',
-      minify: true,
+      outDir: "dist",
       rollupOptions: {
         input: {
           core: "src/lib/index.ts",
           main: "src/index.ts",
         },
         output: {
-          format: "es",
           entryFileNames: "assets/js/[name].js",
           assetFileNames: "assets/css/[name].[ext]",
         },
@@ -28,10 +28,23 @@ export default defineConfig(({ command, mode }) => {
             dest: "./",
           },
           {
-            src: ["src/components/**/*.php"],
-            dest: "./components",
-            rename: (name, extension) => `component-${name}.${extension}`,
-          }
+            src: ["src/components/*/*.php"],
+            dest: "./components/",
+            rename: (name, extension) => `${name}/main.${extension}`,
+          },
+          {
+            src: ["src/components/*/partials/*.php"],
+            dest: "./components/",
+            rename: (name, extension, path) => {
+              const dirNames = path.split("/");
+
+              const i = dirNames.findIndex(
+                (dirName) => dirName === "components"
+              );
+
+              return `${dirNames[i + 1]}/partials/${name}.${extension}`;
+            },
+          },
         ],
       }),
     ],

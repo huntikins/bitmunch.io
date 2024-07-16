@@ -1,7 +1,11 @@
-import { Alpine } from "alpinejs";
+import { Alpine } from "@types/alpinejs";
 
 declare global {
   interface Window {
-    Alpine: Alpine;
+    bitmunch: IBitmunch;
   }
+}
+
+export interface IBitmunch {
+  Alpine: Alpine;
 }
