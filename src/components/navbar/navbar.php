@@ -1,4 +1,4 @@
-<div class="fixed inset-x-0 top-0 z-50 flex items-center justify-between w-full h-24 px-4 py-2 mx-auto max-w-screen-2xl sm:px-8"
+<div class="fixed inset-x-0 top-0 z-50 flex items-center justify-between w-full h-20 px-6 py-2 mx-auto shadow-sm bg-dark-primary text-light-primary max-w-screen-2xl sm:px-12"
     x-data="navbar">
     <div class="site-branding">
         <div class="font-mono text-2xl">

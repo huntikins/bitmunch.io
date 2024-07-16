@@ -46,6 +46,23 @@ function bitmunch_io_scripts()
 }
 add_action('wp_enqueue_scripts', 'bitmunch_io_scripts');
 
+function bitmunch_io_remove_wp_styles()
+{
+	wp_dequeue_style('wp-block-library');
+	wp_dequeue_style('wp-block-library-theme');
+	wp_dequeue_style('wc-block-style');
+	wp_dequeue_style('global-styles');
+}
+add_action('wp_enqueue_scripts', 'bitmunch_io_remove_wp_styles', 100);
+
+// Remove Global Styles and SVG Filters from WP 5.9.1
+function remove_global_styles_and_svg_filters()
+{
+	remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+	remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+}
+add_action('init', 'remove_global_styles_and_svg_filters');
+
 /**
  * Imports
  */

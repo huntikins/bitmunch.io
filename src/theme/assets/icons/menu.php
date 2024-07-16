@@ -1,4 +1,4 @@
-<svg viewBox="0 0 24 24" class="h-inherit w-inherit" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 20 20" class="h-inherit w-inherit" xmlns="http://www.w3.org/2000/svg">
     <path
         d="M12 5C11.4477 5 11 5.44772 11 6C11 6.55228 11.4477 7 12 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H12Z"
         fill="currentColor" />
