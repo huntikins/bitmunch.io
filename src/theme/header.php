@@ -21,11 +21,10 @@
 	<?php wp_head(); ?>
 </head>
 
-<body class="mx-auto max-w-screen-2xl">
+<body class="mx-auto max-w-screen-2xl scroll-smooth">
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
-		<a class="skip-link screen-reader-text"
-			href="#primary"><?php esc_html_e('Skip to content', 'bitmunch-io'); ?></a>
+		<a class="sr-only" href="#primary"><?php esc_html_e('Skip to content', 'bitmunch-io'); ?></a>
 		<header id="masthead" class="site-header">
 			<?php get_template_part('components/navbar/main'); ?>
 		</header>

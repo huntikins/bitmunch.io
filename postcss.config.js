@@ -2,12 +2,11 @@ export default {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
-    'postcss-replace': {
+    "postcss-replace": {
       pattern: /(--tw|\*, ::before, ::after)/g,
       data: {
-        '--tw': '--bitmunch',
-        '*, ::before, ::after': ':root',
-      }
-    }
+        "--tw": "--bitmunch",
+      },
+    },
   },
-}
+};
