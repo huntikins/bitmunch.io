@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @import "./fonts.scss";
 
@@ -15,6 +15,6 @@
   h4,
   h5,
   h6 {
-    font-family: "Iosevka", monospace;
+    @apply font-mono;
   }
 }

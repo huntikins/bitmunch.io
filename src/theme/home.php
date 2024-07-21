@@ -14,11 +14,11 @@ get_header();
     <!--HERO-->
     <?php get_template_part('templates/partials/home/hero'); ?>
 
-    <!--ABOUT-->
-    <?php get_template_part('templates/partials/home/about'); ?>
+    <!--QUOTE-->
+    <?php get_template_part('templates/partials/home/quote'); ?>
 
-
-    <section></section><!-- #latest -->
+    <!--LATEST-->
+    <?php get_template_part('templates/partials/home/latest'); ?>
     <section></section> <!-- #featured dev diaries -->
     <section></section> <!-- # featured articles -->
     <section></section> <!-- # featured tutorials -->

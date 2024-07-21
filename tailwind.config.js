@@ -2,7 +2,8 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
-  content: ["./src/**/*.{php,ts}"],
+  relative: true,
+  content: ["./src/theme/**/*.php", "./src/components/**/*.{php,ts}"],
   theme: {
     fontFamily: {
       mono: ["Iosevka", ...defaultTheme.fontFamily.mono],
