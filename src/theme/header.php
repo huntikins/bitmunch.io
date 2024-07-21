@@ -23,7 +23,7 @@
 
 <body class="mx-auto max-w-screen-2xl scroll-smooth">
 	<?php wp_body_open(); ?>
-	<div id="page" class="site">
+	<div id="page">
 		<a class="sr-only" href="#primary"><?php esc_html_e('Skip to content', 'bitmunch-io'); ?></a>
 		<header id="masthead" class="site-header">
 			<?php get_template_part('components/navbar/main'); ?>

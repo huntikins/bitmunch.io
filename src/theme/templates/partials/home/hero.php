@@ -8,7 +8,7 @@
     <div
         class="absolute top-0 left-0 p-8 pt-24 bg-dark-primary/80 sm:p-12 sm:pt-20 text-light-primary w-dvw h-dvh max-w-screen-2xl">
         <div class="flex flex-col items-center justify-center w-full h-full">
-            <div class="flex flex-col justify-end w-full h-1/2">
+            <div class="flex flex-col items-start justify-center w-full h-2/3">
                 <strong class="pb-2 font-mono text-xl italic text-light-primary"><span class="text-brand-dark"
                         aria-hidden="true">//</span>
                     Featured article</strong>
@@ -18,8 +18,8 @@
                     us
                 </h1>
             </div>
-            <div class="flex items-end w-full h-1/2">
-                <ul class="flex flex-col items-start w-full text-lg sm:items-center sm:flex-row sm:w-3/4">
+            <div class="flex items-end w-full h-1/3">
+                <ul class="flex flex-col items-start w-full text-lg md:items-center md:flex-row">
                     <li class="flex flex-col pb-4 sm:pb-0 sm:pr-16">
                         <strong class="font-mono italic text-brand-light">Published</strong>
                         <span class="text-base">July 31st 2024</span>
@@ -32,7 +32,7 @@
                         <strong class="font-mono italic text-brand-light">Reading time</strong>
                         <span class="text-base">3 minutes</span>
                     </li>
-                    <li class="flex flex-col pr-16">
+                    <li class="flex flex-col pr-8">
                         <strong class="font-mono italic text-brand-light">Tags</strong>
                         <span class="text-base"><u>#coding</u> <u>#coding</u> <u>#coding</u> </span>
                     </li>
