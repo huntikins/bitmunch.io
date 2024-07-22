@@ -11,27 +11,46 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function bitmunch_io_body_classes( $classes ) {
+function bitmunch_io_body_classes($classes)
+{
 	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
+	if (!is_singular()) {
 		$classes[] = 'hfeed';
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	if (!is_active_sidebar('sidebar-1')) {
 		$classes[] = 'no-sidebar';
 	}
 
 	return $classes;
 }
-add_filter( 'body_class', 'bitmunch_io_body_classes' );
+add_filter('body_class', 'bitmunch_io_body_classes');
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function bitmunch_io_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+function bitmunch_io_pingback_header()
+{
+	if (is_singular() && pings_open()) {
+		printf('<link rel="pingback" href="%s">', esc_url(get_bloginfo('pingback_url')));
 	}
 }
-add_action( 'wp_head', 'bitmunch_io_pingback_header' );
+add_action('wp_head', 'bitmunch_io_pingback_header');
+
+//estimated reading time
+function the_reading_time($post)
+{
+	$content = get_post_field('post_content', $post->ID);
+	$word_count = str_word_count(strip_tags($content));
+	$readingtime = ceil($word_count / 200);
+
+	if ($readingtime == 1) {
+		$timer = " minute";
+	} else {
+		$timer = " minutes";
+	}
+	$totalreadingtime = $readingtime . $timer;
+
+	return $totalreadingtime;
+}

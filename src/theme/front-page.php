@@ -19,10 +19,6 @@ get_header();
 
     <!--LATEST-->
     <?php get_template_part('templates/partials/home/latest'); ?>
-    <section></section> <!-- #featured dev diaries -->
-    <section></section> <!-- # featured articles -->
-    <section></section> <!-- # featured tutorials -->
-    <section></section> <!-- # contact -->
 </main><!-- #main -->
 
 <?php

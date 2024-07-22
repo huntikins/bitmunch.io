@@ -63,6 +63,34 @@ function remove_global_styles_and_svg_filters()
 }
 add_action('init', 'remove_global_styles_and_svg_filters');
 
+// Disable Gutenberg on the back end.
+add_filter('use_block_editor_for_post', '__return_false');
+
+// Disable Gutenberg for widgets.
+add_filter('use_widgets_block_editor', '__return_false');
+
+// Removes from admin menu
+add_action('admin_menu', 'bitmunch_remove_admin_menus');
+function bitmunch_remove_admin_menus()
+{
+	remove_menu_page('edit-comments.php');
+}
+// Removes from post and pages
+add_action('init', 'remove_comment_support', 100);
+
+function remove_comment_support()
+{
+	remove_post_type_support('post', 'comments');
+	remove_post_type_support('page', 'comments');
+}
+// Removes from admin bar
+function bitmunch_admin_bar_render()
+{
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('comments');
+}
+add_action('wp_before_admin_bar_render', 'bitmunch_admin_bar_render');
+
 /**
  * Imports
  */
@@ -70,8 +98,10 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/metabox/featured-post.php';
+require get_template_directory() . '/inc/metabox/seo.php';
+require get_template_directory() . '/inc/metabox/a11y.php';
 
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
