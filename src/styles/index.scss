@@ -6,8 +6,7 @@
 
 @layer base {
   html {
-    @apply font-sans;
-    @apply bg-dark-primary;
+    @apply font-sans bg-dark-primary text-light-primary;
   }
 
   h1,

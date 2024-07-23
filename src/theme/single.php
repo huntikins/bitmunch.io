@@ -11,23 +11,16 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-
 	<?php
 	while (have_posts()):
 		the_post();
 
 		get_template_part('templates/content/' . get_post_type());
 
-		the_post_navigation(
-			array(
-				'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'bitmunch-io') . '</span> <span class="nav-title">%title</span>',
-				'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'bitmunch-io') . '</span> <span class="nav-title">%title</span>',
-			)
-		);
-
 	endwhile; // End of the loop.
 	?>
-
+	<?php get_template_part('templates/partials/global/marketing'); ?>
+	<?php get_template_part('templates/partials/global/post-nav'); ?>
 </main><!-- #main -->
 
 <?php

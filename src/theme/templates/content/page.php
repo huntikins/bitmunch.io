@@ -10,45 +10,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
-	<?php bitmunch_io_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bitmunch-io' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'bitmunch-io' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+	<section class="relative h-96">
+		<div class="absolute top-0 left-0 w-full h-96 max-w-screen-2xl" aria-hidden="true">
+			<?php the_post_thumbnail('post-thumbnail', ['class' => 'block object-cover w-full h-96 sm:object-left brightness-50 saturate-75 contrast-75']); ?>
+		</div>
+		<div
+			class="absolute top-0 left-0 w-full p-8 pt-24 h-96 bg-dark-primary/80 sm:p-12 sm:pt-20 text-light-primary max-w-screen-2xl">
+			<div class="flex flex-col items-center justify-center w-full h-full">
+				<div class="flex flex-col items-start justify-center w-full h-2/3">
+					<h1 class="text-3xl leading-tight md:text-5xl sm:text-4xl text-brand-light"><?php the_title(); ?>
+					</h1>
+				</div>
+			</div>
+		</div>
+	</section><!-- #featured -->
+	<section class="w-full p-8 bg-dark-secondary/50 sm:p-12 text-light-primary max-w-screen-2xl">
+		<?php the_content(); ?>
+	</section>
 </article><!-- #post-<?php the_ID(); ?> -->

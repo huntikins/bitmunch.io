@@ -10,12 +10,12 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main bg-light-primary">
+<main id="primary" class="site-main">
     <!--HERO-->
     <?php get_template_part('templates/partials/home/hero'); ?>
 
     <!--QUOTE-->
-    <?php get_template_part('templates/partials/home/quote'); ?>
+    <?php get_template_part('templates/partials/global/quote'); ?>
 
     <!--LATEST-->
     <?php get_template_part('templates/partials/home/latest'); ?>

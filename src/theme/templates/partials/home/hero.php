@@ -9,12 +9,12 @@ $featured = new WP_Query($args);
 if ($featured->have_posts()):
     while ($featured->have_posts()):
         $featured->the_post(); ?>
-        <section class="relative h-dvh">
-            <div class="absolute top-0 left-0 w-dvw h-dvh max-w-screen-2xl" aria-hidden="true">
+        <section class="relative h-screen">
+            <div class="absolute top-0 left-0 w-screen h-screen max-w-screen-2xl" aria-hidden="true">
                 <?php the_post_thumbnail('post-thumbnail', ['class' => 'block object-cover w-full h-full sm:object-left brightness-50 saturate-75 contrast-75']); ?>
             </div>
             <div
-                class="absolute top-0 left-0 p-8 pt-24 bg-dark-primary/80 sm:p-12 sm:pt-20 text-light-primary w-dvw h-dvh max-w-screen-2xl">
+                class="absolute top-0 left-0 w-screen h-screen p-8 pt-24 bg-dark-primary/80 sm:p-12 sm:pt-20 text-light-primary max-w-screen-2xl">
                 <div class="flex flex-col items-center justify-center w-full h-full">
                     <div class="flex flex-col items-start justify-center w-full h-2/3">
                         <strong class="pb-2 font-mono text-xl italic text-light-primary"><span class="text-brand-dark"

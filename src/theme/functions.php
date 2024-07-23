@@ -43,6 +43,10 @@ function bitmunch_io_scripts()
 	wp_enqueue_style('bitmunch-theme', get_template_directory_uri() . '/assets/css/main.css', array(), BITMUNCH_VERSION);
 	wp_enqueue_script('bitmunch-core', get_template_directory_uri() . '/assets/js/core.js', array(), BITMUNCH_VERSION, false);
 	wp_enqueue_script('bitmunch-main', get_template_directory_uri() . '/assets/js/main.js', array(), BITMUNCH_VERSION, true, array('strategy' => 'defer'));
+
+	if (is_singular('post')) {
+		wp_enqueue_style('bitmunch-posts', get_template_directory_uri() . '/assets/css/post.css', array(), BITMUNCH_VERSION);
+	}
 }
 add_action('wp_enqueue_scripts', 'bitmunch_io_scripts');
 
