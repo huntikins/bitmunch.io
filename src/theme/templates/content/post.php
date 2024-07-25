@@ -10,18 +10,18 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <section class="relative h-96">
-        <div class="absolute top-0 left-0 w-full h-96 max-w-screen-2xl" aria-hidden="true">
-            <?php the_post_thumbnail('post-thumbnail', ['class' => 'block object-cover w-full h-96 sm:object-left brightness-50 saturate-75 contrast-75']); ?>
+    <section class="relative h-128">
+        <div class="absolute top-0 left-0 w-full h-128 max-w-screen-2xl" aria-hidden="true">
+            <?php the_post_thumbnail('post-thumbnail', ['class' => 'block object-cover w-full h-128 sm:object-left brightness-50 saturate-75 contrast-75']); ?>
         </div>
         <div
-            class="absolute top-0 left-0 w-full p-8 pt-24 h-96 bg-dark-primary/80 sm:p-12 sm:pt-20 text-light-primary max-w-screen-2xl">
+            class="absolute top-0 left-0 w-full p-8 pt-24 h-128 bg-dark-primary/80 sm:p-12 sm:pt-20 text-light-primary max-w-screen-2xl">
             <div class="flex flex-col items-center justify-center w-full h-full">
-                <div class="flex flex-col items-start justify-center w-full h-2/3">
+                <div class="flex flex-col items-start justify-center w-full pt-12 sm:pt-24">
                     <h1 class="text-3xl leading-tight md:text-5xl sm:text-4xl text-brand-light"><?php the_title(); ?>
                     </h1>
                 </div>
-                <div class="flex items-end w-full h-1/3">
+                <div class="flex items-end w-full mt-auto">
                     <ul class="flex flex-col items-start w-full text-lg md:items-center md:flex-row">
                         <li class="flex flex-col pb-4 pr-16 sm:pb-0">
                             <strong class="font-mono italic text-brand-light">Author</strong>
@@ -64,6 +64,8 @@
         </div>
     </section><!-- #featured -->
     <section class="w-full p-8 bg-dark-secondary/50 sm:p-12 text-light-primary max-w-screen-2xl">
-        <?php the_content(); ?>
+        <div class="sm:px-24">
+            <?php the_content(); ?>
+        </div>
     </section>
 </article><!-- #post-<?php the_ID(); ?> -->
