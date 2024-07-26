@@ -22,5 +22,10 @@ export default {
       info: "#5ADBFF",
       success: "#256D1B",
     },
+    extend: {
+      height: {
+        128: "32rem",
+      },
+    },
   },
 };
