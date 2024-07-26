@@ -1,0 +1,32 @@
+.bm\:btn {
+  --bm--btn-width: 100%;
+  --bm--btn-height: initial;
+  --bm--btn-bg-color: var(--bm--color-brand-primary);
+  --bm--btn-text-color: var(--bm--color-light-primary);
+
+  display: block;
+  width: var(--bm--btn-width);
+  height: var(--bm--btn-height);
+
+  color: var(--bm--btn-text-color);
+  background: var(--bm--btn-bg-color);
+  text-align: center;
+
+  &-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--bm--spacing-4);
+  }
+
+  &-box {
+    --bm--btn-width: var(--bm--spacing-8);
+    --bm--btn-height: var(--bm--spacing-8);
+    --bm--btn-bg-color: linear-gradient(
+      45deg,
+      var(--bm--color-brand-dark),
+      var(--bm--color-brand-primary),
+      var(--bm--color-brand-light)
+    );
+  }
+}

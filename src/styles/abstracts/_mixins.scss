@@ -1,0 +1,19 @@
+@mixin spacing($prefix, $property, $opt) {
+  @for $i from 1 through length($sizing_increments) {
+    // Create the rule
+    .bm\:#{$prefix}-#{$i} {
+      #{$property}: var(--bm--spacing-#{$i});
+
+      @if $opt {
+        #{$opt}: var(--bm--spacing-#{$i});
+      }
+    }
+  }
+}
+
+@mixin sizing {
+  @for $i from 1 through length($sizing_increments) {
+    $value: nth($sizing_increments, $i);
+    --bm--spacing-#{$i}: #{$value * $increment_default};
+  }
+}

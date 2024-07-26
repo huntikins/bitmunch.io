@@ -1,0 +1,28 @@
+:root {
+  /**
+  * Colors
+  **/
+  --bm--color-brand-primary: #19c384;
+  --bm--color-brand-dark: #15a26f;
+  --bm--color-brand-light: #26e39e;
+  --bm--color-dark-primary: #191a19;
+  --bm--color-dark-secondary: #2a2b2e;
+  --bm--color-light-primary: #e8f1f2;
+  --bm--color-light-secondary: #19c384;
+  --bm--color-danger: #cc2936;
+  --bm--color-warning: #ffdd4a;
+  --bm--color-info: #5adbff;
+  --bm--color-success: #256d1b;
+
+  /**
+  * TYPOGRAPHY
+  **/
+  --bm--font-heading: "Iosevka", "Courier New", Courier, monospace;
+  --bm--font-main: "Lato", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+
+  /**
+  * sizing
+  **/
+  @include sizing;
+}

@@ -13,7 +13,6 @@ export default defineConfig(({ command, mode }) => {
         input: {
           core: "src/lib/index.ts",
           main: "src/index.ts",
-          post: "src/posts.ts",
         },
         output: {
           entryFileNames: "assets/js/[name].js",

@@ -1,20 +1,17 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+// Abstracts
+@import "abstracts/variables";
+@import "abstracts/helpers";
+@import "abstracts/mixins";
 
-@import "./fonts.scss";
+// Base styles
+@import "base/reset";
+@import "base/root";
+@import "base/base";
+@import "base/spacing";
 
-@layer base {
-  html {
-    @apply font-sans bg-dark-primary text-light-primary;
-  }
+// Fonts
+@import "fonts/iosveka";
+@import "fonts/lato";
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-mono;
-  }
-}
+// Components
+@import "components/components";

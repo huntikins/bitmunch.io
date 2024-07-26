@@ -1,0 +1,20 @@
+$spacing_rules: (
+  "m" "margin",
+  "mx" "margin-left" "margin-right",
+  "my" "margin-top" "margin-bottom",
+  "ml" "margin-left",
+  "mt" "margin-top",
+  "mb" "margin-bottom",
+  "mr" "margin-right",
+  "p" "padding",
+  "px" "padding-left" "padding-right",
+  "py" "padding-top" "padding-bottom",
+  "pl" "padding-left",
+  "pt" "padding-top",
+  "pb" "padding-bottom",
+  "pr" "padding-right"
+);
+
+@each $class, $property, $opt in $spacing_rules {
+  @include spacing($class, $property, $opt);
+}

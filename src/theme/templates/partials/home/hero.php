@@ -61,8 +61,7 @@ if ($featured->have_posts()):
                                 </span>
                             </li>
                         </ul>
-                        <a href="<?php the_permalink(); ?>" aria-label="Read <?php the_title(); ?>"
-                            class="w-16 h-16 p-3 ml-auto text-center bg-gradient-to-br from-brand-dark via-brand-primary to-brand-light text-light-primary">
+                        <a href="<?php the_permalink(); ?>" aria-label="Read <?php the_title(); ?>" class="bm:btn bm:btn-box">
                             <?php get_template_part('assets/icons/arrow-b-r'); ?>
                         </a>
                     </div>

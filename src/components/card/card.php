@@ -44,18 +44,18 @@
                     if (!empty($post_tags)) {
                         foreach ($post_tags as $post_tag) {
                             ?>
-                            <span class="mr-2">
-                                <a
-                                    href="<?php echo get_term_link($post_tag, $post_tag->name); ?>">#<?php echo $post_tag->name; ?></a>
-                            </span>
-                            <?php
+                    <span class="mr-2">
+                        <a
+                            href="<?php echo get_term_link($post_tag, $post_tag->name); ?>">#<?php echo $post_tag->name; ?></a>
+                    </span>
+                    <?php
                         }
                     } ?>
                 </span>
             </div>
             <div class="pt-6">
                 <a href="<?php the_permalink(); ?>" aria-label="Read <?php the_title(); ?>"
-                    class="flex items-center justify-center w-full p-3 text-center bg-gradient-to-br from-brand-dark via-brand-primary to-brand-light text-light-primary">
+                    class="bm:btn bm:btn-primary">
                     <span class="font-mono text-lg uppercase">Read now</span>
                     <span class="inline-block w-6 h-6 ml-2"><?php get_template_part('assets/icons/arrow-b-r'); ?></span>
                 </a>
