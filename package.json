@@ -24,8 +24,6 @@
   },
   "dependencies": {
     "@alpinejs/focus": "^3.14.1",
-    "@fontsource-variable/kode-mono": "^5.0.3",
-    "@fontsource-variable/noto-sans-lao": "^5.0.18",
     "alpinejs": "^3.14.1"
   }
 }

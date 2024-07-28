@@ -40,25 +40,30 @@ add_action('after_setup_theme', 'bitmunch_io_setup');
 
 function bitmunch_io_scripts()
 {
-	wp_enqueue_style('bitmunch-theme', get_template_directory_uri() . '/assets/css/main.css', array(), BITMUNCH_VERSION);
-	wp_enqueue_script('bitmunch-core', get_template_directory_uri() . '/assets/js/core.js', array(), BITMUNCH_VERSION, false);
-	wp_enqueue_script('bitmunch-main', get_template_directory_uri() . '/assets/js/main.js', array(), BITMUNCH_VERSION, true, array('strategy' => 'defer'));
-	wp_enqueue_style('bitmunh-font', get_template_directory_uri() . '/assets/css/files', array(), BITMUNCH_VERSION);
-
-	if (is_singular('post')) {
-		wp_enqueue_style('bitmunch-posts', get_template_directory_uri() . '/assets/css/post.css', array(), BITMUNCH_VERSION);
-	}
-}
-add_action('wp_enqueue_scripts', 'bitmunch_io_scripts');
-
-function bitmunch_io_remove_wp_styles()
-{
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
 	wp_dequeue_style('wc-block-style');
 	wp_dequeue_style('global-styles');
+	wp_deregister_script('jquery');
+	wp_deregister_script('clipboard');
+
+	wp_enqueue_style('bitmunch-theme', get_template_directory_uri() . '/assets/css/main.css', array(), BITMUNCH_VERSION);
+	wp_enqueue_script('bitmunch-core', get_template_directory_uri() . '/assets/js/core.js', array(), BITMUNCH_VERSION, false);
+	wp_enqueue_script('bitmunch-main', get_template_directory_uri() . '/assets/js/main.js', array(), BITMUNCH_VERSION, true, array('strategy' => 'defer'));
+	wp_enqueue_style('bitmunch-font-sans', 'https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-lao:vf@latest/latin-wght-normal.woff2', array(
+		'rel' => 'preload',
+		'as' => 'font',
+		'type' => "font/woff2",
+		"crossorigin" => "anonymous"
+	), BITMUNCH_VERSION);
+	wp_enqueue_style('bitmunch-font-mono', 'https://cdn.jsdelivr.net/fontsource/fonts/kode-mono:vf@latest/latin-wght-normal.woff2', array(
+		'rel' => 'preload',
+		'as' => 'font',
+		'type' => "font/woff2",
+		"crossorigin" => "anonymous"
+	), BITMUNCH_VERSION);
 }
-add_action('wp_enqueue_scripts', 'bitmunch_io_remove_wp_styles', 100);
+add_action('wp_enqueue_scripts', 'bitmunch_io_scripts');
 
 // Remove Global Styles and SVG Filters from WP 5.9.1
 function remove_global_styles_and_svg_filters()
