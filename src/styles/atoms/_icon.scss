@@ -1,0 +1,13 @@
+.bm\:icon {
+  --bm--icon-height: 100%;
+  --bm--icon-width: 100%;
+
+  height: var(--bm--icon-height);
+  width: var(--bm--icon-width);
+  display: inline-block;
+
+  &-small {
+    --bm--icon-height: var(--bm--size-4);
+    --bm--icon-width: var(--bm--size-4);
+  }
+}

@@ -1,5 +1,6 @@
 /** @type {import('vite').UserConfig} */
 
+import path from "path";
 import { defineConfig } from "vite";
 import { viteStaticCopy as copy } from "vite-plugin-static-copy";
 
@@ -7,6 +8,11 @@ export default defineConfig(({ command, mode }) => {
   return {
     mode: "production",
     appType: "custom",
+    resolve: {
+      alias: {
+        "~": path.resolve(__dirname, "./node_modules"),
+      },
+    },
     build: {
       outDir: "dist",
       rollupOptions: {
@@ -16,7 +22,13 @@ export default defineConfig(({ command, mode }) => {
         },
         output: {
           entryFileNames: "assets/js/[name].js",
-          assetFileNames: "assets/css/[name].[ext]",
+          assetFileNames: (output) => {
+            if (output.name.includes("woff")) {
+              return "assets/css/files/[name].[ext]";
+            }
+
+            return "assets/css/[name].[ext]";
+          },
         },
       },
     },

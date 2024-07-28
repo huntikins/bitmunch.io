@@ -8,20 +8,31 @@
   width: var(--bm--btn-width);
   height: var(--bm--btn-height);
 
-  color: var(--bm--btn-text-color);
   background: var(--bm--btn-bg-color);
+  color: var(--bm--btn-text-color);
   text-align: center;
+  text-transform: uppercase;
+  font-size: var(--bm--font-size-3);
 
   &-primary {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--bm--spacing-4);
+    padding: var(--bm--size-4);
+  }
+
+  &-menu {
+    --bm--btn-width: var(--bm--size-7);
+    --bm--btn-height: var(--bm--size-7);
+    --bm--btn-text-color: var(--bm--color-brand-light);
+    --bm--btn-bg-color: none;
+
+    fill: var(--bm--btn-text-color);
   }
 
   &-box {
-    --bm--btn-width: var(--bm--spacing-8);
-    --bm--btn-height: var(--bm--spacing-8);
+    --bm--btn-width: var(--bm--size-8);
+    --bm--btn-height: var(--bm--size-8);
     --bm--btn-bg-color: linear-gradient(
       45deg,
       var(--bm--color-brand-dark),

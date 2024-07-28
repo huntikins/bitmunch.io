@@ -17,12 +17,21 @@
   /**
   * TYPOGRAPHY
   **/
-  --bm--font-heading: "Iosevka", "Courier New", Courier, monospace;
-  --bm--font-main: "Lato", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
+  --bm--font-heading: "Kode Mono Variable", monospace;
+  --bm--font-main: "Noto Sans Lao Variable", sans-serif;
 
   /**
   * sizing
   **/
-  @include sizing;
+  @include generateIncrement("size");
+
+  /**
+  * font-size
+  **/
+  @include generateIncrement("font-size");
+
+  /**
+  * breakpoints
+  **/
+  @include generateFromMap("break", $breakpoints);
 }

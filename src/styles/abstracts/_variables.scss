@@ -1,3 +1,15 @@
-// Sizing increments
-$sizing_increments: 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5;
-$increment_default: 1.25rem;
+// Default
+$default_increment_list: 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5;
+$default_multiplier: 1.25rem;
+
+// Typography
+$font_increment_list: 0.25, 0.5, 0.75, 0.8, 1, 1.15, 1.25, 1.5, 1.75, 2;
+
+// Media queriies
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1536px,
+) !default;

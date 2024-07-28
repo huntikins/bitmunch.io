@@ -9,8 +9,13 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+
+  max-width: var(--bm--break-2xl);
+  margin: 0 auto;
 }
 
 %headings {
   font-family: var(--bm--font-heading);
+  padding-bottom: var(--bm--size-3);
+  font-weight: 800;
 }

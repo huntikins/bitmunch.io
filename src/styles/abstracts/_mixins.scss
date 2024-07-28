@@ -1,19 +1,25 @@
 @mixin spacing($prefix, $property, $opt) {
-  @for $i from 1 through length($sizing_increments) {
+  @for $i from 1 through length($default_increment_list) {
     // Create the rule
     .bm\:#{$prefix}-#{$i} {
-      #{$property}: var(--bm--spacing-#{$i});
+      #{$property}: var(--bm--size-#{$i});
 
       @if $opt {
-        #{$opt}: var(--bm--spacing-#{$i});
+        #{$opt}: var(--bm--size-#{$i});
       }
     }
   }
 }
 
-@mixin sizing {
-  @for $i from 1 through length($sizing_increments) {
-    $value: nth($sizing_increments, $i);
-    --bm--spacing-#{$i}: #{$value * $increment_default};
+@mixin generateIncrement($key, $custom_increments: $default_increment_list) {
+  @for $i from 1 through length($default_increment_list) {
+    $value: nth($default_increment_list, $i);
+    --bm--#{$key}-#{$i}: #{$value * $default_multiplier};
+  }
+}
+
+@mixin generateFromMap($key, $map) {
+  @each $item, $value in $map {
+    --bm--#{$key}-#{$item}: #{$value};
   }
 }
