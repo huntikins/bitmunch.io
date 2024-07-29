@@ -11,15 +11,26 @@
   }
 }
 
-@mixin generateIncrement($key, $custom_increments: $default_increment_list) {
+@mixin generateIncrement(
+  $key,
+  $custom_increments: $default_increment_list,
+  $custom_multiplier: $default_multiplier
+) {
   @for $i from 1 through length($default_increment_list) {
     $value: nth($default_increment_list, $i);
-    --bm--#{$key}-#{$i}: #{$value * $default_multiplier};
+    --bm--#{$key}-#{$i}: #{$value * $custom_multiplier};
   }
 }
 
 @mixin generateFromMap($key, $map) {
   @each $item, $value in $map {
     --bm--#{$key}-#{$item}: #{$value};
+  }
+}
+
+@mixin generateColors($map) {
+  @each $item, $value in $map {
+    --bm--color-#{$item}: #{$value};
+    --bm--color-#{$item}--rgb: #{hexToRGB($value)};
   }
 }

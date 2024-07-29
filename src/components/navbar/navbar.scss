@@ -2,9 +2,9 @@
 
 .bm\:nav {
   --bm--nav-position: fixed;
-  --bm--nav-padding-y: var(--bm--size-1);
-  --bm--nav-padding-x: var(--bm--size-5);
-  --bm--nav-padding: var(--bm--nav-padding-y) var(--bm--nav-padding-y);
+  --bm--nav-padding-y: var(--bm--size-3);
+  --bm--nav-padding-x: var(--bm--size-4);
+  --bm--nav-padding: var(--bm--nav-padding-y) var(--bm--nav-padding-x);
 
   &__track {
     position: var(--bm--nav-position);
@@ -18,8 +18,9 @@
     padding: var(--bm--nav-padding);
     color: var(--bm--color-light-primary);
 
-    @include media("<=sm") {
+    @include media(">=sm") {
       --bm--nav-padding-y: var(--bm--size-6);
+      --bm--nav-padding-x: var(--bm--size-6);
 
       margin: 0 auto;
       max-width: var(--bm--break-2xl);
@@ -27,7 +28,41 @@
   }
 
   &__title {
-    font-size: var(--bm--font-size-6);
+    font-size: var(--bm--font-size-5);
     font-family: var(--bm--font-heading);
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: var(--bm--size-5);
+    color: var(--bm--color-light-primary);
+    background-color: rgba(var(--bm--color-dark-primary--rgb), 0.4);
+    backdrop-filter: blur(12px);
+
+    @include media(">=sm") {
+      margin: 0 auto;
+      max-width: var(--bm--break-2xl);
+      padding: var(--bm--size-6);
+    }
+
+    &-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      height: var(--bm--size-10);
+      padding: var(--bm--nav-padding);
+
+      @include media(">=sm") {
+        --bm--nav-padding-y: var(--bm--size-6);
+        --bm--nav-padding-x: var(--bm--size-6);
+      }
+    }
   }
 }

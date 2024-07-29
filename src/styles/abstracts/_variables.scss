@@ -13,3 +13,18 @@ $breakpoints: (
   "xl": 1280px,
   "2xl": 1536px,
 ) !default;
+
+// Colors
+$colors: (
+  "brand-primary": #19c384,
+  "brand-dark": #15a26f,
+  "brand-light": #26e39e,
+  "dark-primary": #191a19,
+  "dark-secondary": #2a2b2e,
+  "light-primary": #e8f1f2,
+  "light-secondary": #19c384,
+  "danger": #cc2936,
+  "warning": #ffdd4a,
+  "info": #5adbff,
+  "success": #256d1b,
+);
