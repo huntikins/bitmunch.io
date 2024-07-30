@@ -17,6 +17,7 @@
     height: var(--bm--size-10);
     padding: var(--bm--nav-padding);
     color: var(--bm--color-light-primary);
+    z-index: 9999999;
 
     @include media(">=sm") {
       --bm--nav-padding-y: var(--bm--size-6);

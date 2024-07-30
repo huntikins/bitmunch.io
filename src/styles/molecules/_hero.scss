@@ -1,0 +1,34 @@
+@import "../../styles/base/media";
+
+.bm\:hero {
+  --bm--hero-height: 100%;
+  --bm--hero-width: 100%;
+  height: var(--bm--hero-height);
+  width: var(--bm--hero-width);
+
+  &-full {
+    --bm--hero-height: 100vh;
+    --bm--hero-width: 100vw;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: var(--bm--break-2xl);
+
+    &--image {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.5) saturate(0.75) contrast(0.75);
+
+      @include media(">=sm") {
+        object-position: left;
+      }
+    }
+  }
+}
